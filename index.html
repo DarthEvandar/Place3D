@@ -101,7 +101,7 @@
 			
 				container = document.getElementById( 'container' );
 				//
-				pixels = document.getElementById('pixels').value;
+				var pixels = document.getElementById('pixels').value;
 				//camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 5, 2000);
 				camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 50, 1e7 );
 				camera.position.z = 2750;
@@ -116,8 +116,8 @@
 				var co = ["#FFFFFF", "#E4E4E4", "#888888", "#222222", "#FFA7D1", "#E50000", "#E59500", "#A06A42", "#E5D900", "#94E044", "#02BE01", "#00D3DD", "#0083C7", "#0000EA", "#CF6EE4", "#820080"];
 				var parse = [];
 				var geometry = new THREE.BufferGeometry();
-				var positions = new Float32Array(pixels);
-				var colors = new Float32Array(pixels);
+				var positions = new Float32Array(parseInt(pixels));
+				var colors = new Float32Array(parseInt(pixels));
 				var color = new THREE.Color();
 				var go = 0;
 				for ( var i = 0; i < pixels; i += 3 ) {
