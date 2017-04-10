@@ -9,6 +9,7 @@
 		</style>
 	</head>
 	<body>
+	<div style="display:none" id="load">Loading...may take a while<br>If window doesn't load correctly, try reloading</div>
 	<div id = "rend">Render <input type="number" id="pixels"> Pixels</input></div>
 	<button id = "start" onclick="start()">Start</button>
 	<div id="info">Recommended: 2,000,000 pixels</div>
@@ -52,6 +53,7 @@
 										if (client3.readyState === client3.DONE) {
 											raw = raw+client3.responseText;
 											pts = raw.split("\n");
+											document.getElementById('load').style.display = "none";
 											init();
 											animate();
 										}
@@ -72,6 +74,7 @@
 				document.getElementById('controls').style.display = "none";
 				document.getElementById('max').style.display = "none";
 				document.getElementById('extra').style.display = "none";
+				document.getElementById('load').style.display = "inline";
 				client.send();
 			}
 			/*client.onreadystatechange = function() {
